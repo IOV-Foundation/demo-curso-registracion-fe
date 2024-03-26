@@ -52,7 +52,7 @@ export default function Home() {
           />
           <button
             type="submit"
-            className="primary-color mt-4 rounded px-6 py-4 text-white"
+            className="bg-cace-primary mt-4 rounded px-6 py-4 text-white"
           >
             Enviar
           </button>
