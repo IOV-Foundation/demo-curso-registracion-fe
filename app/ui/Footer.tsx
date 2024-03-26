@@ -7,7 +7,7 @@ import { Youtube } from './icons/Youtube';
 
 export function Footer() {
   return (
-    <footer className="bg-cace-primary flex h-16 w-full items-center justify-between border-t  p-8 text-white">
+    <footer className="bg-cace-primary flex min-h-16 w-full flex-col items-center justify-between gap-4 border-t p-8 text-white lg:flex-row">
       <Image src="/logo-white.png" alt="Logo CACE" width={110} height={110} />
       <p>Copyright © 2024 CACE</p>
       <div className="flex">
