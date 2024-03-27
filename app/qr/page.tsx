@@ -9,12 +9,11 @@ export default function QRCodePage() {
       <TitlePage />
       <div className="mt-8 flex flex-col gap-8 xl:flex-row">
         <DownloadWallet />
-        <div className="flex flex-col">
-          <QRCode size={180} value="/credentials" />
+        <div className="flex flex-col items-center">
+          <QRCode size={180} value="/credentials" className="w-full" />
           <p className="mt-4">
-            or click{' '}
             <Link href="/credentials" className="text-cace-primary">
-              this link
+              ó Click aquí.
             </Link>
           </p>
         </div>

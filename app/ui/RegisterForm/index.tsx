@@ -15,7 +15,7 @@ export const RegisterForm: FC = () => {
       />
       <Link
         href="/confirmation-code"
-        className="bg-cace-primary mt-4 rounded px-6 py-4 text-white"
+        className="mt-4 w-full rounded bg-cace-primary px-6 py-4 text-center text-white md:w-auto"
       >
         Enviar
       </Link>
