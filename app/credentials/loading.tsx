@@ -11,7 +11,7 @@ export default function Loading() {
           </h2>
           <Image src={'/logo.png'} alt="Logo CACE" width={200} height={200} />
         </div>
-        <p className="py-4">Credencial de Representante de Miembro</p>
+        <p className="py-4">Credencial de Representante de Miembro...</p>
         <CardSkeleton />
       </div>
     </main>
