@@ -1,5 +1,5 @@
-import { DownloadWallet } from './ui/DownloadWallet';
-import { RegisterForm } from './ui/RegisterForm';
+import { ConfirmationForm } from '../ui/ConfirmationForm';
+import { DownloadWallet } from '../ui/DownloadWallet';
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       </h1>
       <div className="mt-8 flex flex-col gap-8 xl:flex-row">
         <DownloadWallet />
-        <RegisterForm />
+        <ConfirmationForm />
       </div>
     </main>
   );
