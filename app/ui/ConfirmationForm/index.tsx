@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
 export const ConfirmationForm: FC = () => {
@@ -12,12 +13,12 @@ export const ConfirmationForm: FC = () => {
         name="code"
         className="w-full rounded border p-4"
       />
-      <button
-        type="submit"
+      <Link
+        href="/qr"
         className="bg-cace-primary mt-4 rounded px-6 py-4 text-white"
       >
-        Validar
-      </button>
+        Enviar
+      </Link>
     </form>
   );
 };

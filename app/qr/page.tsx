@@ -1,7 +1,7 @@
-import { ConfirmationForm } from '../ui/ConfirmationForm';
+import QRCode from 'react-qr-code';
 import { DownloadWallet } from '../ui/DownloadWallet';
 
-export default function ConfirmationCode() {
+export default function QRCodePage() {
   return (
     <main className="flexitems-center mx-auto w-full max-w-screen-xl p-8">
       <h1 className="my-8 text-center text-3xl">
@@ -9,7 +9,7 @@ export default function ConfirmationCode() {
       </h1>
       <div className="mt-8 flex flex-col gap-8 xl:flex-row">
         <DownloadWallet />
-        <ConfirmationForm />
+        <QRCode size={180} value="hey" />
       </div>
     </main>
   );
