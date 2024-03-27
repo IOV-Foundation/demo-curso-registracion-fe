@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 export const DownloadWallet: FC = () => {
   return (
-    <div className="flex flex-col rounded-lg bg-gray-100 p-8">
+    <div className="flex flex-col justify-between rounded-lg bg-gray-100 p-8">
       <p>
         Para poder obtener tu credencial vas a necesitar instalar la wallet XX
         en tu celular. <br />

@@ -3,7 +3,7 @@ import { RegisterForm } from './ui/RegisterForm';
 
 export default function Home() {
   return (
-    <main className="flexitems-center mx-auto w-full max-w-screen-xl p-8">
+    <main className="mx-auto w-full max-w-screen-xl p-8">
       <h1 className="my-8 text-center text-3xl">
         Solicitá tu credencial de representante
       </h1>
