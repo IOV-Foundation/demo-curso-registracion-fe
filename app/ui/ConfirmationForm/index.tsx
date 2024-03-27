@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { FC } from 'react';
 
-export const ConfirmationForm: FC = () => {
+export function ConfirmationForm() {
   return (
     <form action="" className="flex flex-1 flex-col items-start">
       <label htmlFor="email" className="mb-4 text-lg">
@@ -15,10 +14,10 @@ export const ConfirmationForm: FC = () => {
       />
       <Link
         href="/qr"
-        className="bg-cace-primary mt-4 rounded px-6 py-4 text-white"
+        className="mt-4 rounded bg-cace-primary px-6 py-4 text-white"
       >
         Enviar
       </Link>
     </form>
   );
-};
+}

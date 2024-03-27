@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { FC } from 'react';
 
-export const DownloadWallet: FC = () => {
+export function DownloadWallet() {
   return (
     <div className="flex flex-col justify-between rounded-lg bg-gray-100 p-8">
       <p>
@@ -37,4 +36,4 @@ export const DownloadWallet: FC = () => {
       </div>
     </div>
   );
-};
+}
