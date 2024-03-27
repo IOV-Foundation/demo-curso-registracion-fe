@@ -14,7 +14,7 @@ export function ConfirmationForm() {
       />
       <Link
         href="/qr"
-        className="mt-4 rounded bg-cace-primary px-6 py-4 text-white"
+        className="mt-4 w-full rounded bg-cace-primary px-6 py-4 text-center text-white md:w-auto"
       >
         Enviar
       </Link>
