@@ -2,7 +2,14 @@ import { ConfirmationForm } from '../ui/ConfirmationForm';
 import { DownloadWallet } from '../ui/DownloadWallet';
 import { TitlePage } from '../ui/Title';
 
-export default function ConfirmationCode() {
+export default function ConfirmationCode({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}): JSX.Element {
+  console.log('searchParams', searchParams);
   return (
     <main className="flexitems-center mx-auto w-full max-w-screen-xl p-8">
       <TitlePage />
