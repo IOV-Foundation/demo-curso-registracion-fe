@@ -1,7 +1,7 @@
 import { DownloadWallet } from './ui/DownloadWallet';
 import { RegisterForm } from './ui/RegisterForm';
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <main className="mx-auto w-full max-w-screen-xl p-8">
       <h1 className="my-8 text-center text-3xl">

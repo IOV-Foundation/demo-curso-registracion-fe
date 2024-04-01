@@ -5,7 +5,12 @@ interface IProps {
   email: string;
 }
 
-export function CredentialsCard({ name, company, role, email }: IProps) {
+export function CredentialsCard({
+  name,
+  company,
+  role,
+  email,
+}: IProps): JSX.Element {
   return (
     <>
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
