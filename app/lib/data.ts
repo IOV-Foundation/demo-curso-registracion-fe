@@ -1,12 +1,13 @@
+import { type ICredencial } from "./definitions";
 
 
-export async function getCredential() {
+export async function getCredential(): Promise<ICredencial> {
   try {
     // Sample of a fake API
     // const response = await fetch('/api/credentials', {cache: 'no-store'});
     // const data = await response.json();
     // return data;   
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => {setTimeout(resolve, 3000)});
 
     const data = {
       name: 'Juan Perez',

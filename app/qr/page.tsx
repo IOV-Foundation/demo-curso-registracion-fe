@@ -1,9 +1,9 @@
 import QRCode from 'react-qr-code';
+import Link from 'next/link';
 import { DownloadWallet } from '../ui/DownloadWallet';
 import { TitlePage } from '../ui/Title';
-import Link from 'next/link';
 
-export default function QRCodePage() {
+export default function QRCodePage(): JSX.Element {
   return (
     <main className="mx-auto w-full max-w-screen-xl p-8">
       <TitlePage />
