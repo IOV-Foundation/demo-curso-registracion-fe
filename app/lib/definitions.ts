@@ -1,14 +1,17 @@
 import { z } from 'zod'
-
  
 export const emailSchema = z.object({
   email: z
     .string()
-    .email({ message: 'Invalid email' })
-    .min(1, { message: 'Email is required' }),
+    .trim()
+    .email({ message: 'Email inválido' })
+    .min(1, { message: 'Email es requerido' }),
 })
 
+export type formInputs = z.infer<typeof emailSchema>;
+
 export interface IState {
+  message?: string;
   errors?: {
     email?: string[];
   };

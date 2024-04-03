@@ -51,7 +51,10 @@
     "react/jsx-props-no-spreading": "off", // Allowing spread props
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-misused-promises": "warn",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/explicit-function-return-type": "warn"
   },
   "settings": {
     "import/resolver": {
