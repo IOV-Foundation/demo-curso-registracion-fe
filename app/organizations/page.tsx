@@ -2,7 +2,6 @@ import { cookies } from 'next/headers';
 
 export default function Organizations(): JSX.Element {
   const user = cookies().get('eventbrite_user');
-  console.log('user', user);
   return (
     <main className="mx-auto w-full max-w-screen-xl p-8">
       <h1 className="my-8 text-center text-3xl">Organizations</h1>
