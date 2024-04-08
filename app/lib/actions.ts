@@ -1,21 +1,23 @@
 'use server';
 
-// import { redirect } from 'next/navigation'
-import { IState, emailSchema, formInputs } from "./definitions";
+import { IState, IUser, IUserResponse, emailSchema, formInputs } from "./definitions";
+import { getErrorMessage } from "./errorHandler";
+import { sdk } from "./eventbrite";
 
-export async function authenticateToEventBrite(): Promise<void> {
-  // redirect(`https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=${process.env.EVENTBRITE_CLIENT_ID}&redirect_uri=http://localhost:3000/oauth/redirect`);
-  // try {
-  //   const response = await fetch('https://www.eventbrite.com/oauth/token', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     body: `grant_type=authorization_code&client_id=${process.env.EVENTBRITE_CLIENT_ID}&client_secret=${process.env.EVENTBRITE_CLIENT_SECRET}`,
-  //   });
-  // } catch (error) {
-    
-  // }
+// Login to Eventbrite
+export async function getEventbriteUser(): Promise<IUserResponse> {
+  try {
+    const user = await sdk.request('/users/me')
+    return {
+      message: 'Sesion iniciada',
+      user: user as IUser
+    }
+  } catch (error) {
+    return {
+      message: 'Hubo un error',
+      error: getErrorMessage(error),
+    }
+  }
 }
 
 

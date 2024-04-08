@@ -3,7 +3,11 @@
 import clsx from 'clsx';
 import { useFormStatus } from 'react-dom';
 
-export function SubmitButton({ isDisabled = true }): JSX.Element {
+export function SubmitButton({
+  isDisabled = true,
+  labelSubmit = 'Enviar',
+  labelLoading = 'Cargando...',
+}): JSX.Element {
   const { pending } = useFormStatus();
 
   return (
@@ -18,7 +22,7 @@ export function SubmitButton({ isDisabled = true }): JSX.Element {
         },
       )}
     >
-      {pending ? 'Enviando...' : 'Enviar'}
+      {pending ? labelLoading : labelSubmit}
     </button>
   );
 }

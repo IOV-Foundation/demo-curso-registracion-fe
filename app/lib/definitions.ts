@@ -17,6 +17,29 @@ export interface IState {
   };
 };
 
+export interface IGenericResponse {
+  message: string,
+  error?: string
+}
+
+export interface IUserValue {
+  emails: [{ email: string, verified: boolean, primary: boolean }],
+  id: string,
+  name: string,
+  first_name: string,
+  last_name: string,
+  is_public: boolean,
+  image_id: null | string
+}
+export interface IUser {
+  name: string,
+  value: IUserValue
+}
+
+export interface IUserResponse extends IGenericResponse {
+  user?: IUser
+}
+
 
 export interface ICredencial {
   name: string;
