@@ -1,26 +1,42 @@
 'use server';
 
-import { redirect } from 'next/navigation';
-import { emailSchema, type IState } from "./definitions";
+import { IState, IUser, IUserResponse, emailSchema, formInputs } from "./definitions";
+import { getErrorMessage } from "./errorHandler";
+import { sdk } from "./eventbrite";
 
-export async function sendEmail(prevState: IState, formData: FormData): Promise<{
-  errors: {
-      email?: string[] | undefined;
-  };
-}> {
-  const validatedFields = emailSchema.safeParse({
-    email: formData.get('email'),
-  })
+// Login to Eventbrite
+export async function getEventbriteUser(): Promise<IUserResponse> {
+  try {
+    const user = await sdk.request('/users/me')
+    return {
+      message: 'Sesion iniciada',
+      user: user as IUser
+    }
+  } catch (error) {
+    return {
+      message: 'Hubo un error',
+      error: getErrorMessage(error),
+    }
+  }
+}
+
+
+export async function sendEmail(data: formInputs): Promise<IState> {
+  const parsed = emailSchema.safeParse(data)
  
   // Return early if the form data is invalid
-  if (!validatedFields.success) {
+  if (!parsed.success) {
     return {
-      errors: validatedFields.error.flatten().fieldErrors,
+      errors: parsed.error.formErrors.fieldErrors,
+      message: "Invalid form data",
     }
   }
   
   // TODO: Connect to the API to send the email
-  await new Promise((resolve) => {setTimeout(resolve, 9000)});
-
-  return redirect(`/confirmation-code?email=${validatedFields.data.email}`);
+  await new Promise((resolve) => { setTimeout(resolve, 9000) });
+  
+  return {
+    message: "Email sent",
+    errors: {},
+  }
 }
