@@ -35,7 +35,7 @@ export default function RootLayout({
       >
         <div>
           <Header />
-          {children}
+          <div className="p-8">{children}</div>
         </div>
         <Footer />
         <Toaster position="top-center" />

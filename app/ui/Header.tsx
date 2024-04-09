@@ -9,6 +9,11 @@ export function Header(): JSX.Element {
       <Link href="/">
         <Image src="/logo.png" alt="Logo CACE" width={110} height={110} />
       </Link>
+      <Link href="/did">
+        <div className="rounded-full border border-gray-400 p-2">
+          <Image src="/icons/user.webp" alt="DID" width={25} height={25} />
+        </div>
+      </Link>
     </header>
   );
 }
