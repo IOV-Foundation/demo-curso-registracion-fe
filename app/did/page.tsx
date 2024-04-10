@@ -2,11 +2,12 @@
 
 import toast from 'react-hot-toast';
 import { useState } from 'react';
-import Image from 'next/image';
 import { getErrorMessage } from '../lib/errorHandler';
 
 export default function Did(): JSX.Element {
   const [did, setDid] = useState('');
+  const [privateDid, setPrivateDid] = useState('');
+  const [togglePrivateKey, setTogglePrivateKey] = useState(false);
 
   async function handleSubmit(): Promise<void> {
     const { DidJwk } = await import('@web5/dids');
@@ -15,7 +16,9 @@ export default function Did(): JSX.Element {
       const didJwk = await DidJwk.create();
 
       // DID and its associated data which can be exported and used in different contexts/apps
-      // const portableDid = await didJwk.export();
+      const portableDid = await didJwk.export();
+      const privateKey = portableDid.privateKeys?.[0]?.d ?? '';
+      setPrivateDid(privateKey);
 
       // DID string
       const didUri = didJwk.uri;
@@ -47,12 +50,7 @@ export default function Did(): JSX.Element {
               toast.success('DID copied to clipboard');
             }}
           >
-            <Image
-              src="/cc.png"
-              alt="Copy to Clipboard"
-              width={50}
-              height={50}
-            />
+            <span className="material-symbols-outlined">content_copy</span>
           </button>
         </div>
       ) : (
@@ -66,6 +64,47 @@ export default function Did(): JSX.Element {
         >
           Generate DID
         </button>
+      )}
+
+      {privateDid && (
+        <div className="mt-8">
+          <hr className="mb-8 w-full" />
+          <h1 className="mb-8 text-center text-2xl">View Private DID</h1>
+          <p className="mb-8">
+            This is your private facing Descentrilized Identifier (DID) created
+            by the wallet, do NOT share this with others.
+          </p>
+          <div className="flex flex-col items-center md:flex-row">
+            <input
+              type={togglePrivateKey ? 'text' : 'password'}
+              className="flex w-full items-center break-all bg-gray-100 p-4"
+              defaultValue={privateDid}
+            />
+            <div className="flex items-center">
+              <button
+                type="button"
+                className="p-4"
+                onClick={() => {
+                  setTogglePrivateKey(!togglePrivateKey);
+                }}
+              >
+                <span className="material-symbols-outlined">
+                  {togglePrivateKey ? 'visibility_off' : 'visibility'}
+                </span>
+              </button>
+              <button
+                type="button"
+                className="p-4 text-black"
+                onClick={() => {
+                  void navigator.clipboard.writeText(privateDid);
+                  toast.success('Private DID copied to clipboard');
+                }}
+              >
+                <span className="material-symbols-outlined">content_copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import './globalicon.css';
 import clsx from 'clsx';
 import { Toaster } from 'react-hot-toast';
 import { Header } from './ui/Header';
