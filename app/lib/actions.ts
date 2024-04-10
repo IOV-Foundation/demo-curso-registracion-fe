@@ -1,6 +1,6 @@
 'use server';
 
-import {  IState, IUser, IUserResponse, emailSchema, formInputs } from "./definitions";
+import { IState, IUser, IUserResponse, emailSchema, formInputs } from "./definitions";
 import { getErrorMessage } from "./errorHandler";
 import { sdk } from "./eventbrite";
 
