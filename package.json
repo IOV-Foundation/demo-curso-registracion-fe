@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "https": "next dev --experimental-https",
     "lint": "next lint",
     "prepare": "husky install",
     "start": "next start"
