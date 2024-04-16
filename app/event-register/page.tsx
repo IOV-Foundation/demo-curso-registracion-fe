@@ -6,7 +6,7 @@ export default function EventRegister(): JSX.Element {
   return (
     <main className="mx-auto w-full max-w-screen-lg p-8">
       <h1 className="mt-8 p-4 text-center text-3xl">
-        Registración al Evento para Miembros de CACE{' '}
+        Obten tu credencial de invitación
       </h1>
       <p className="pb-8 text-center text-lg">
         Miercoles 23 de Marzo 2024 - Costa Salguero, Buenos Aires
