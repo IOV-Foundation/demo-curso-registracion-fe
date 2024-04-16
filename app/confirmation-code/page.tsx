@@ -9,6 +9,7 @@ export default function ConfirmationCode({
   params: { slug: string };
   searchParams: Record<string, string | string[] | undefined>;
 }): JSX.Element {
+  // eslint-disable-next-line no-console
   console.log('search Params', searchParams);
   return (
     <main className="flexitems-center mx-auto w-full max-w-screen-xl p-8">
