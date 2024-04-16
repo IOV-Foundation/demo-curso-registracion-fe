@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
         onOrderComplete: exampleCallback, // Method called when an order has successfully completed
       });
     }
-  }, []);
+  }, [router]);
 
   return (
     <main className="mx-auto w-full max-w-screen-xl p-8">
