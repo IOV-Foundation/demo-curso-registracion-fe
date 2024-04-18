@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import './globalicon.css';
 import clsx from 'clsx';
+import { Toaster } from 'react-hot-toast';
 import { Header } from './ui/Header';
 import { Footer } from './ui/Footer';
 
@@ -34,9 +36,10 @@ export default function RootLayout({
       >
         <div>
           <Header />
-          {children}
+          <div className="p-8">{children}</div>
         </div>
         <Footer />
+        <Toaster position="top-center" />
       </body>
     </html>
   );
