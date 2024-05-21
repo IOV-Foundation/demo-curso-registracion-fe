@@ -17,15 +17,17 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     count.current += 1;
-    function exampleCallback(): void {
-      router.push('/event-register');
+    function exampleCallback({orderId}: {orderId: string}): void {
+      console.log('AAA', orderId)
+      router.push(`/event-register/${orderId}`);
     }
 
     if (count.current === 1) {
       window.EBWidgets.createWidget({
         // Required
         widgetType: 'checkout',
-        eventId: '875347537047',
+        // eventId: '875347537047',
+        eventId: '894356734067',
         iframeContainerId: 'eventbrite-widget-container-875347537047',
         // Optional
         iframeContainerHeight: 600, // Widget height in pixels. Defaults to a minimum of 425px if not provided
